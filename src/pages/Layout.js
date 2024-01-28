@@ -11,7 +11,7 @@ const Layout = () => {
           <div className='home_header'>
             <Link to="/"> <div className='triangle-left'><span>Shashi</span> </div></Link>
             <Link to="/"><div>Home</div></Link>
-            <Link to="/recommendations"><div className='best_seller_link'>Best Seller</div></Link>
+            <Link to="/productListing"><div className='best_seller_link'>Best Seller</div></Link>
             <Link to="/blogs"><div>Blogs</div></Link>
             <Link to="/contact"><div>Contact</div></Link>
           </div>
