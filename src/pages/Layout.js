@@ -10,10 +10,10 @@ const Layout = () => {
       <div className='px-10 py-2 border-b font-semibold flex w-full flex justify-between items-center header_wrap'>
           <div className='home_header'>
             <Link to="/"> <div className='triangle-left'><span>Shashi</span> </div></Link>
-            <Link to="/"><div>Home</div></Link>
-            <Link to="/productListing"><div className='best_seller_link'>Best Seller</div></Link>
-            <Link to="/blogs"><div>Blogs</div></Link>
-            <Link to="/contact"><div>Contact</div></Link>
+            <Link to="/" className='home_nav'><div>Home</div></Link>
+            <Link to="/productListing" className='home_listing'><div className='best_seller_link'>Best Seller</div></Link>
+            <Link to="/blogs" className='blog_nav'><div>Download Resume</div></Link>
+            <Link to="/contact" className='contact_nav'><div>Contact</div></Link>
           </div>
           <div className='dashboard'> <a href='https://keen-kitten-685cf0.netlify.app/' target='_blank' rel="noreferrer">Dashboard</a></div> 
           <ShoppingCart/>
