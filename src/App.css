@@ -535,8 +535,31 @@ menu, ol, ul, li {
   object-fit: contain;
   width: 100%;
 }
-
-
+.contact_block {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.mob, .email, .linkedin, .github{
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.mob h3, .email h3, .linkedin h3, .github h3{
+  margin: 0;
+}
+.contact_block span {
+  font-size: 24px;
+  font-weight: 600;
+}
+.contact_wrap{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
 /* @media (min-width:320px)  {  */
   @media only screen and (min-width: 300px) and (max-width: 961px) { 
     .product_wraper {
