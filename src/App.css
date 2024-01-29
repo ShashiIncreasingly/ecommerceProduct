@@ -61,6 +61,7 @@
   margin: 10px 10px;
   border: 1px solid #ccc;
   min-width: 260px;
+  position: relative;
 }
 .product_list img {
   max-width: 200px;
@@ -1123,3 +1124,4 @@ input::placeholder, textarea::placeholder {
     margin: 0px 10px;
   }
 }
+

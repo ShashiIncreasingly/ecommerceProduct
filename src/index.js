@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import BestSeller from "./pages/BestSeller";
 import { CartProvider } from './cartContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FBT from './components/FBT';
+import CatRecs from './components/CatRecs';
 // import { BrowserRouter as Router, Switch, Route,Routes, Link } from "react-router-dom";
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="productListing" element={<BestSeller />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="fbt" element={<FBT />} />
+          <Route path="categoryProducts" element={<CatRecs />} />
         </Route>
       </Routes>
     </BrowserRouter>
