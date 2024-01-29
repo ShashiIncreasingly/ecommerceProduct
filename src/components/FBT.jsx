@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/less';
 import 'swiper/less/navigation';
 import 'swiper/less/pagination';
+// import { useMediaQuery } from 'react-responsive';
 
 const FBT = function(){
     const [products, setProducts] = useState(null);

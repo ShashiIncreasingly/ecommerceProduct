@@ -153,3 +153,67 @@ span.checkbox_spn {
   opacity: 0;
   transform: scale(0);
 }
+
+@media only screen and (min-width: 300px) and (max-width: 961px) {
+    .fbt_wrapper_products {
+        flex-flow: column;
+        width: 100%;
+    }
+    .fbt_wrapper{
+        width: 100%;
+    }
+    .mainproducts{
+        justify-content: center;
+    }
+    .fbt_item_wrap_slider {
+        overflow: auto;
+        flex-flow: column;
+        width: 100%;
+    }
+    .mainproducts, .fbt_item_wrap {
+        flex-flow: column;
+    }
+    .addtocartbtn{
+        display: none;
+    }
+    .product_list img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+    .prod_details{
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        margin: 0;
+        align-items: flex-start;
+    }
+    .product_name, .product_c{
+        margin-left: 0;
+    }
+    .image_block {
+        width: 82px;
+    }
+    .product_list > div {
+        display: flex;
+    }
+    [type="checkbox"]:not(:checked)+label:before, [type="checkbox"]:checked+label:before {
+        width: 20px;
+        height: 20px;
+    }
+    span.checkbox_spn {
+        width: 20px;
+        height: 20px;
+    }
+    .plusicon {
+        font-size: 30px;
+        justify-content: center;
+    }
+    [type="checkbox"]:not(:checked)+label:after, [type="checkbox"]:checked+label:after {
+        top: 4px;
+        left: 5px;
+        font-size: 14px;
+    }
+    .swiper-button-prev, .swiper-button-next{
+        display: none;
+    }
+}
