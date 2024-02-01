@@ -11,8 +11,17 @@ import { CartProvider } from './cartContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FBT from './components/FBT';
 import CatRecs from './components/CatRecs';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 // import { BrowserRouter as Router, Switch, Route,Routes, Link } from "react-router-dom";
-
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+]);
 export default function App() {
   return (
     <BrowserRouter>
