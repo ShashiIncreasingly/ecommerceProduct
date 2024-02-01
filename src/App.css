@@ -86,8 +86,27 @@
   width: 268px;
   min-width: 18%;
   background: #efefef;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 0;
+  flex-flow: column;
+  align-items: flex-start;
+}
+.select_wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+  align-items: center;
+}
+.filter_by_price{
+  font-size: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.select_wrap select {
+  height: 30px;
+  margin-left: 5px;
+  width: 116px;
+  border-radius: 20px;
 }
 .product_wraper{
   display: flex;
@@ -682,6 +701,7 @@ menu, ol, ul, li {
     right: auto;
     list-style: none;
     text-align: start;
+    z-index: 9;
   }
   .modal-open .dropdown-menu {
     width: 100%;
