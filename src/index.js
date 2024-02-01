@@ -20,11 +20,11 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route index element={<Home />} />
-          <Route path="productListing" element={<BestSeller />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="fbt" element={<FBT />} />
-          <Route path="categoryProducts" element={<CatRecs />} />
+          <Route path="/productListing" element={<BestSeller />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/fbt" element={<FBT />} />
+          <Route path="/categoryProducts" element={<CatRecs />} />
         </Route>
       </Routes>
     </BrowserRouter>
