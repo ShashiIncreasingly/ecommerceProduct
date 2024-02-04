@@ -178,7 +178,7 @@ body {
         width: 100%;
     }
     .mainproducts, .fbt_item_wrap {
-        flex-flow: column;
+        justify-content: center;
     }
     .fbt_block  .addtocartbtn{
         display: none;
@@ -203,7 +203,12 @@ body {
         margin: 0;
         align-items: flex-start;
     }
-    .product_name, .product_c{
+    .product_name{
+        margin-left: 0;
+        text-align: left;
+        min-height: 32px;
+    }
+    .product_c{
         margin-left: 0;
         text-align: left;
     }
