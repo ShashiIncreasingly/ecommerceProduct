@@ -26,7 +26,10 @@ export const CartProvider = ({ children }) => {
     }
     document.querySelector('.cart_header').click();
   };
-
+  const addBundletocart = (...bundlepr) => {
+      
+      console.log(...bundlepr)
+  }
   const removeItemFromCart = (itemId) => {
     const updatedCart = cart.filter(item => item.id !== itemId);
     setCart(updatedCart);
@@ -37,7 +40,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItemToCart, removeItemFromCart, clearCart }}>
+    <CartContext.Provider value={{ cart, addItemToCart, removeItemFromCart, clearCart, addBundletocart }}>
       {children}
     </CartContext.Provider>
   );

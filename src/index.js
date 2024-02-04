@@ -12,7 +12,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FBT from './components/FBT';
 import CatRecs from './components/CatRecs';
 
-
 export default function App() {
   return (
     <BrowserRouter>

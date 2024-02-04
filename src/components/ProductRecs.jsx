@@ -38,11 +38,11 @@ function ProductRecs() {
   function sortPrice(val){
     var productSort;
     if(val === "default"){
-      productSort = products.sort((a, b) => (a.id - b.id))
+      productSort = activeProducts.sort((a, b) => (a.id - b.id))
     }else if(val === "decending"){
-      productSort = products.sort((a, b) => ((b.discounted_price ? b.discounted_price : b.price ) - (a.discounted_price ? a.discounted_price : a.price)))
+      productSort = activeProducts.sort((a, b) => ((b.discounted_price ? b.discounted_price : b.price ) - (a.discounted_price ? a.discounted_price : a.price)))
     }else if(val === "accending"){
-      productSort = products.sort((a, b) => ((a.discounted_price ? a.discounted_price : a.price) - (b.discounted_price ? b.discounted_price : b.price)))
+      productSort = activeProducts.sort((a, b) => ((a.discounted_price ? a.discounted_price : a.price) - (b.discounted_price ? b.discounted_price : b.price)))
     }
     setActiveProducts(productSort)
     console.log(productSort)

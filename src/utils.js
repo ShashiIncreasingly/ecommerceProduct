@@ -11,7 +11,7 @@ export const fetchProducts = async (url) => {
  
         return { responseData, error: null };
     } catch (error) {
-        return { responseData: null, error: { status: "Error", message: error.message } };
+        return { responseData: [], error: { status: "Error", message: error.message } };
     }
 };
  

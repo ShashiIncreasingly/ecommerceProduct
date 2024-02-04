@@ -1,3 +1,6 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 .fbt_block {
     display: flex;
     flex-flow: column;
@@ -14,7 +17,7 @@
 .fbt_wrapper {
     display: flex;
     flex-flow: wrap;
-
+    margin: 10px 0 20px 0;
 }
 
 .fbt_item_list {
@@ -53,8 +56,9 @@
 
 .fbt_summary_wrap {
     display: flex;
-    align-items: end;
-    position: relative;
+    flex-flow: column;
+    justify-content: end;
+    min-width: 200px;
 }
 
 .product_list p {
@@ -111,7 +115,7 @@
     z-index: 9;
 }
 
-span.checkbox_spn {
+.checkbox_btn {
     position: absolute;
     top: 4px;
     background: #ccc;
@@ -120,14 +124,14 @@ span.checkbox_spn {
     right: 4px;
 }
 
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+/* .checkbox_btn,
+.checkbox_btn.active {
   position: absolute;
   left: -9999px;
-}
+} */
 
-[type="checkbox"]:not(:checked)+label:before,
-[type="checkbox"]:checked+label:before {
+.checkbox_btn .checkbox_spn:before,
+.checkbox_btn.active .checkbox_spn:before {
   content: '';
   position: absolute;
   left: 0;
@@ -137,8 +141,8 @@ span.checkbox_spn {
   outline: none;
 }
 
-[type="checkbox"]:not(:checked)+label:after,
-[type="checkbox"]:checked+label:after {
+
+.checkbox_btn.active .checkbox_spn:after {
   content: '✔';
   position: absolute;
   top: 8px;
@@ -149,11 +153,13 @@ span.checkbox_spn {
   transition: all .2s;
 }
 
-[type="checkbox"]:not(:checked)+label:after {
+.checkbox_btn button:after {
   opacity: 0;
   transform: scale(0);
 }
-
+.fbt_block .addtocartbtn{
+    display: none;
+}
 @media only screen and (min-width: 300px) and (max-width: 961px) {
     .fbt_wrapper_products {
         flex-flow: column;
@@ -161,6 +167,7 @@ span.checkbox_spn {
     }
     .fbt_wrapper{
         width: 100%;
+        justify-content: center;
     }
     .mainproducts{
         justify-content: center;
@@ -173,8 +180,17 @@ span.checkbox_spn {
     .mainproducts, .fbt_item_wrap {
         flex-flow: column;
     }
-    .addtocartbtn{
+    .fbt_block  .addtocartbtn{
         display: none;
+    }
+    .swiper {
+        margin: 0;
+    }
+    .fbt_block {
+        text-align: center;
+    }
+    .fbt_title{
+        font-size: 22px;
     }
     .product_list img {
         max-width: 80px;
@@ -189,6 +205,7 @@ span.checkbox_spn {
     }
     .product_name, .product_c{
         margin-left: 0;
+        text-align: left;
     }
     .image_block {
         width: 82px;
@@ -196,11 +213,11 @@ span.checkbox_spn {
     .product_list > div {
         display: flex;
     }
-    [type="checkbox"]:not(:checked)+label:before, [type="checkbox"]:checked+label:before {
+    .checkbox_btn .checkbox_spn:before, .checkbox_btn.active .checkbox_spn:before {
         width: 20px;
         height: 20px;
     }
-    span.checkbox_spn {
+    .checkbox_spn, .checkbox_btn {
         width: 20px;
         height: 20px;
     }
@@ -208,7 +225,7 @@ span.checkbox_spn {
         font-size: 30px;
         justify-content: center;
     }
-    [type="checkbox"]:not(:checked)+label:after, [type="checkbox"]:checked+label:after {
+    .checkbox_btn .checkbox_spn:after, .checkbox_btn.active .checkbox_spn:after {
         top: 4px;
         left: 5px;
         font-size: 14px;
@@ -216,4 +233,79 @@ span.checkbox_spn {
     .swiper-button-prev, .swiper-button-next{
         display: none;
     }
+    .dropdown-link{
+        text-decoration: underline;
+    }
+    ul.dropdown-menu.clicked {
+        display: block;
+    }
 }
+.fbt_summary_list {
+    display: flex;
+    flex-flow: column;
+    overflow: auto;
+    max-height: 258px;
+    position: relative;
+}
+.summary-product-block{
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+.image-block img{
+    width: 30px;
+    height: 30px;
+    display: block;
+    object-fit: contain;
+}
+.product-details{
+    display: flex;
+    flex-flow: column;
+    max-width: 82%;
+}
+button.fbt_add_btn {
+    background: blue;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+.fbt_summary_btn {
+    margin: 10px 0;
+}
+.product-tile {
+    font-size: 12px;
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+}
+
+.product-price {
+    font-size: 12px;
+}
+
+.delete-bundle-prod {
+    position: absolute;
+    right: 22px;
+    cursor: pointer;
+}
+.delete-bundle-prod:hover, .hideMenu:hover {
+    opacity: 1;
+  }
+  .delete-bundle-prod:before, .delete-bundle-prod:after, .hideMenu:before, .hideMenu:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 12px;
+    width: 2px;
+    background-color: #333;
+  }
+  .delete-bundle-prod:before, .hideMenu:before{
+    transform: rotate(45deg);
+  }
+  .delete-bundle-prod:after, .hideMenu:after {
+    transform: rotate(-45deg);
+  }
