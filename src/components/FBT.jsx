@@ -17,7 +17,7 @@ const FBT = function(){
     const [activeProducts, setActiveProducts] = useState(null);
     const [selectedProducts, setselectedProducts] = useState([]);
     const [addedProductsToBundle, setaddedProductsToBundle] = useState([]);
-    const { cart, addItemToCart, removeItemFromCart, clearCart, addBundletocart} = useCart();
+    const { cart, addItemToCart, removeItemFromCart, clearCart, bundleAddToCart} = useCart();
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1290px)' });
     const [clicked, setClicked] = useState('');
     useEffect(() => {
@@ -54,10 +54,9 @@ const FBT = function(){
         clicked ? setClicked('') : setClicked('active');
     }
     const handleAddtocart = () => {
-        addBundletocart(...selectedProducts)
-        // selectedProducts.map((it, index) => {
-        //     addItemToCart(it)
-        // })
+        bundleAddToCart(selectedProducts)
+        setselectedProducts([])
+        setaddedProductsToBundle([])
     }
 
     if(!products) {
@@ -93,6 +92,7 @@ const FBT = function(){
                             {
                                 activeProducts.slice(1).map ((product, index) => {
                                     product.imageURLN = imgSrc[index]
+                                    activeProducts[0].imageURLN = imgSrc[0]
                                     return (
                                         <SwiperSlide>
                                             <div key={product.id} className='product_list mainproduct'>

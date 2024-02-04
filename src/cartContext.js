@@ -26,10 +26,6 @@ export const CartProvider = ({ children }) => {
     }
     document.querySelector('.cart_header').click();
   };
-  const addBundletocart = (...bundlepr) => {
-      
-      console.log(...bundlepr)
-  }
   const removeItemFromCart = (itemId) => {
     const updatedCart = cart.filter(item => item.id !== itemId);
     setCart(updatedCart);
@@ -38,9 +34,31 @@ export const CartProvider = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
-
+  const bundleAddToCart = (addedProd) => {
+    addedProd.map((prod, index) => {
+      let checkbundlepr=false;
+        for(let i=0; i < cart.length; i++){
+          if(cart[i].id === prod.id){
+              checkbundlepr = true
+              if(cart[i].qty_val === undefined){
+                cart[i].qty_val = 2
+              }else{
+                cart[i].qty_val = parseInt(cart[i].qty_val) + 1
+              }
+              break;
+          }
+      }
+      if(!checkbundlepr){
+        prod.qty_val = 1
+        setCart(prevState => [...prevState, prod]);
+      }else{
+        setCart([...cart]);
+      }
+    })
+    document.querySelector('.cart_header').click();
+  }
   return (
-    <CartContext.Provider value={{ cart, addItemToCart, removeItemFromCart, clearCart, addBundletocart }}>
+    <CartContext.Provider value={{ cart, addItemToCart, removeItemFromCart, clearCart ,bundleAddToCart}}>
       {children}
     </CartContext.Provider>
   );
