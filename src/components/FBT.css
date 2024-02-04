@@ -184,7 +184,7 @@ body {
         display: none;
     }
     .swiper {
-        margin: 0;
+        margin: 0 !important;
     }
     .fbt_block {
         text-align: center;
