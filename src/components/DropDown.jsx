@@ -22,7 +22,7 @@ export default function DropDown() {
             {MenuItems.map((item, index) => {
             return (
                 isTabletOrMobile ? 
-                <li key={index}><Link className={item.cName} to={item.path} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}>{item.title}</Link></li> : <li key={index}><Link className={item.cName} to={item.path} onClick={() => setClick(false)}>{item.title}</Link></li>
+                <li key={index}><Link className={item.cName} to={item.path} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}>{item.title}</Link></li> : <li key={index}><Link className={item.cName} to={item.path} onClick={() => setClick(isTabletOrMobile ? true : false)}>{item.title}</Link></li>
             )
             })}
         </ul>
