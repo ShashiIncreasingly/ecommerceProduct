@@ -26,7 +26,9 @@ export default function NavBar2() {
         }
     }
     const hideModal = (event) => {
-      document.body.classList.toggle('modal-open');
+      if (window.innerWidth < 768) {   
+        document.body.classList.toggle('modal-open');
+      }
     }
    
     return (

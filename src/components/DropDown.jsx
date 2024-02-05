@@ -11,14 +11,18 @@ export default function DropDown() {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
     if(click){
-        if(isMobile)document.querySelector('.hideMenu').click()
+        if(isMobile){
+            document.querySelector('.hideMenu').click()
+        }
     }
     const handleOnclickMenu = (checkflag) => {
         setClick(checkflag);
-        if(document.querySelector('body').classList.contains('modal-open')){
-            document.querySelector('body').classList.remove('modal-open')
-        }else{
-            document.querySelector('body').classList.add('modal-open')
+        if(isMobile){
+            if(document.querySelector('body').classList.contains('modal-open')){
+                document.querySelector('body').classList.remove('modal-open')
+            }else{
+                document.querySelector('body').classList.add('modal-open')
+            }
         }
     }
     
