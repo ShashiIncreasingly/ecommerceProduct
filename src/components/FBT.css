@@ -240,6 +240,7 @@ button.fbt_add_btn {
 }
 .sub-total-price{
     display: flex;
+    margin-left: 5px;
 }
 .sub-total-price .strike_price{
     margin-left: 5px;

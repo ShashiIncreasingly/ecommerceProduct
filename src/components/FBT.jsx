@@ -138,11 +138,11 @@ const FBT = function(){
                             })
                         }
                     </div>
-                    <div className={`fbt_summary_btn ${totalPrice !== 0 ? 'active' : 'inactive'}`}>
+                    <div className={`fbt_summary_btn ${totalPrice !== null ? 'active' : 'inactive'}`}>
                         <div className="sub-total-item">Total Items : {<span>{addedProductsToBundle.length}</span>}</div>
                         <div className="sub-total-price"> Total Price : 
-                            {totalDiscountPrice !== 0 && <span className="price">₹{parseFloat(totalDiscountPrice).toFixed(2)}</span>}
-                            {totalPrice !== 0 && <span className="strike_price line-through">₹{parseFloat(totalPrice).toFixed(2)}</span>}
+                            {totalDiscountPrice !== null && <span className="price">₹{parseFloat(totalDiscountPrice).toFixed(2)}</span>}
+                            {totalDiscountPrice !== null && totalPrice > totalDiscountPrice && <span className="strike_price line-through">₹{parseFloat(totalPrice).toFixed(2)}</span>}
                         </div>
                         <button className="fbt_add_btn" onClick={() => handleAddtocart()}>Add Bundle To Cart</button>
                     </div>
