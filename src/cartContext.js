@@ -35,10 +35,10 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
   const bundleAddToCart = (addedProd) => {
-    addedProd.map((prod, index) => {
-      let checkbundlepr=false;
+  for(let a=0;a<addedProd.length;a++){
+    let checkbundlepr=false;
         for(let i=0; i < cart.length; i++){
-          if(cart[i].id === prod.id){
+          if(cart[i].id === addedProd[a].id){
               checkbundlepr = true
               if(cart[i].qty_val === undefined){
                 cart[i].qty_val = 2
@@ -49,12 +49,32 @@ export const CartProvider = ({ children }) => {
           }
       }
       if(!checkbundlepr){
-        prod.qty_val = 1
-        setCart(prevState => [...prevState, prod]);
+        addedProd[a].qty_val = 1
+        setCart(prevState => [...prevState, addedProd[a]]);
       }else{
         setCart([...cart]);
       }
-    })
+  }
+    // addedProd.map((prod, index) => {
+    //   let checkbundlepr=false;
+    //     for(let i=0; i < cart.length; i++){
+    //       if(cart[i].id === prod.id){
+    //           checkbundlepr = true
+    //           if(cart[i].qty_val === undefined){
+    //             cart[i].qty_val = 2
+    //           }else{
+    //             cart[i].qty_val = parseInt(cart[i].qty_val) + 1
+    //           }
+    //           break;
+    //       }
+    //   }
+    //   if(!checkbundlepr){
+    //     prod.qty_val = 1
+    //     setCart(prevState => [...prevState, prod]);
+    //   }else{
+    //     setCart([...cart]);
+    //   }
+    // })
     document.querySelector('.cart_header').click();
   }
   return (

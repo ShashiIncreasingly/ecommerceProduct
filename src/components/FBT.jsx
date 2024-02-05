@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../utils";
 import ProductCard from "./ProductCard";
-import style from './FBT.css'
+import './FBT.css';
 import imgSrc from "./images";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useCart } from "../cartContext";
 import 'swiper/css';
-import 'swiper/less';
-import 'swiper/less/navigation';
-import 'swiper/less/pagination';
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -21,10 +18,10 @@ const FBT = function(){
     const { cart, addItemToCart, removeItemFromCart, clearCart, bundleAddToCart} = useCart();
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1290px)' });
     const [clicked, setClicked] = useState('');
-
     const [subTotalBundlePrice, setSubTotalBundlePrice] = useState(0)
     const [subTotalDiscountBundlePrice, setSubTotalDiscountBundlePrice] = useState(0)
-    
+    let totalPrice=0
+    let totalDiscountPrice=0
 
     useEffect(() => {
         const getProducts = async () => {
@@ -37,6 +34,8 @@ const FBT = function(){
 
     const handleSelectedBundle = (items,btntext) => {
         let elmBtn = btntext;
+        totalPrice=0
+        totalDiscountPrice=0
         if(elmBtn.querySelector('.addtocartbtn').innerText.toLowerCase() === "add to bundle"){
             elmBtn.querySelector('.addtocartbtn').innerText = "Added";
             setselectedProducts([...selectedProducts, items])
@@ -50,32 +49,22 @@ const FBT = function(){
             setaddedProductsToBundle(updatebundleprodcheck)
             clicked ? setClicked('') : setClicked('in-active');
         }
-        totalBundlePrice()
     }
 
     const handleRemoveProductBundle = (item) => {
+        totalPrice=0
+        totalDiscountPrice=0
         const removeProductBundle = selectedProducts.filter ((selectedProducts) => selectedProducts.id !== item.id)
         const bundleremoveprod = addedProductsToBundle.filter ((addedProductsToBundle) => addedProductsToBundle !== item.id)
         setselectedProducts(removeProductBundle)
         setaddedProductsToBundle(bundleremoveprod)
         clicked ? setClicked('') : setClicked('active');
-        totalBundlePrice()
+        
     }
     const handleAddtocart = () => {
         bundleAddToCart(selectedProducts)
         setselectedProducts([])
         setaddedProductsToBundle([])
-        totalBundlePrice()
-    }
-    const totalBundlePrice  = () => {
-        let totalPrice=0
-        let totalDiscountPrice=0
-        selectedProducts.map((bundleprod) => {
-            totalDiscountPrice += bundleprod.discounted_price ?  bundleprod.discounted_price :  bundleprod.price
-            totalPrice += bundleprod.price
-        })
-        setSubTotalBundlePrice(totalPrice)
-        setSubTotalDiscountBundlePrice(totalDiscountPrice)
     }
     if(!products) {
         return (
@@ -132,6 +121,8 @@ const FBT = function(){
                     <div className="fbt_summary_list">
                         {
                             selectedProducts.map((bundlepr) => {
+                                totalDiscountPrice += bundlepr.discounted_price ?  bundlepr.discounted_price :  bundlepr.price
+                                totalPrice += bundlepr.price
                                 return (
                                     <div className="summary-product-block">
                                         <div className="image-block">
@@ -147,11 +138,11 @@ const FBT = function(){
                             })
                         }
                     </div>
-                    <div className="fbt_summary_btn">
+                    <div className={`fbt_summary_btn ${totalPrice !== 0 ? 'active' : 'inactive'}`}>
                         <div className="sub-total-item">Total Items : {<span>{addedProductsToBundle.length}</span>}</div>
                         <div className="sub-total-price"> Total Price : 
-                            {subTotalDiscountBundlePrice !== 0 && <span className="price">₹{parseFloat(subTotalDiscountBundlePrice).toFixed(2)}</span>}
-                            {subTotalBundlePrice !== 0 && <span className="strike_price line-through">₹{parseFloat(subTotalBundlePrice).toFixed(2)}</span>}
+                            {totalDiscountPrice !== 0 && <span className="price">₹{parseFloat(totalDiscountPrice).toFixed(2)}</span>}
+                            {totalPrice !== 0 && <span className="strike_price line-through">₹{parseFloat(totalPrice).toFixed(2)}</span>}
                         </div>
                         <button className="fbt_add_btn" onClick={() => handleAddtocart()}>Add Bundle To Cart</button>
                     </div>

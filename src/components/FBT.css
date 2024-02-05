@@ -238,7 +238,13 @@ button.fbt_add_btn {
     margin: 10px 0;
     display: none;
 }
+.sub-total-price{
+    display: flex;
+}
 .sub-total-price .strike_price{
+    margin-left: 5px;
+}
+.product-price s {
     margin-left: 5px;
 }
 @media only screen and (min-width: 300px) and (max-width: 961px) {
@@ -259,7 +265,7 @@ button.fbt_add_btn {
         width: 100%;
     }
     .mainproducts, .fbt_item_wrap {
-        justify-content: center;
+        justify-content: flex-start;
     }
     .fbt_block  .addtocartbtn{
         display: none;
@@ -327,5 +333,11 @@ button.fbt_add_btn {
     }
     .fbt_summary_list {
         display: none;
+    }
+    .sub-total-item{
+        display: flex;
+    }
+    .sub-total-price{
+        display: flex;
     }
 }

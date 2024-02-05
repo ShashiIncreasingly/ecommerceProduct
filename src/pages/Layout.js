@@ -3,12 +3,10 @@ import React from 'react';
 import ShoppingCart from '../components/ShoppingCart';
 import { Outlet, Link } from "react-router-dom";
 import NavBar2 from '../components/NavBar';
-import { useEffect, useState } from 'react';
 
 
 
 const Layout = () => {
-  const [showModal, setDropdown] = useState(false)
   const openModal = (event) => {
     document.body.classList.add('modal-open');
     document.querySelector('.nav-item .nav-links').click()
