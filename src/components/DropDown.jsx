@@ -10,7 +10,11 @@ export default function DropDown() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1290px)' });
     const handleOnclickMenu = (checkflag) => {
         setClick(checkflag);
-        document.querySelector('body').classList.toggle('modal-open')
+        if(document.querySelector('body').classList.contains('modal-open')){
+            document.querySelector('body').classList.remove('modal-open')
+        }else{
+            document.querySelector('body').classList.add('modal-open')
+        }
     }
     if(click){
         document.querySelector('.hideMenu').click()
@@ -22,7 +26,7 @@ export default function DropDown() {
             {MenuItems.map((item, index) => {
             return (
                 isTabletOrMobile ? 
-                <li key={index}><Link className={item.cName} to={item.path} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}>{item.title}</Link></li> : <li key={index}><Link className={item.cName} to={item.path} onClick={() => setClick(isTabletOrMobile ? true : false)}>{item.title}</Link></li>
+                <li key={index}><Link className={item.cName} to={item.path} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}>{item.title}</Link></li> : <li key={index}><Link className={item.cName} to={item.path} onClick={() => setClick(false)}>{item.title}</Link></li>
             )
             })}
         </ul>
