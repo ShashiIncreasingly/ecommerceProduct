@@ -7,10 +7,12 @@ import { useMediaQuery } from "react-responsive";
 export default function DropDown() {
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 900px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
     if(click){
-        document.querySelector('.hideMenu').click()
+        if(isMobile)document.querySelector('.hideMenu').click()
     }
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1290px)' });
     const handleOnclickMenu = (checkflag) => {
         setClick(checkflag);
         if(document.querySelector('body').classList.contains('modal-open')){

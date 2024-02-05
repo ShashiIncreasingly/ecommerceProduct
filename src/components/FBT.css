@@ -341,4 +341,16 @@ button.fbt_add_btn {
     .sub-total-price{
         display: flex;
     }
+    .sub-total-price {
+        margin-left: 0;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+    .product_list {
+        min-width : 95%;
+    }
+    .mainproducts .product_list {
+        min-width : 280px;
+    }
+    
 }

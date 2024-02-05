@@ -16,10 +16,9 @@ const FBT = function(){
     const [selectedProducts, setselectedProducts] = useState([]);
     const [addedProductsToBundle, setaddedProductsToBundle] = useState([]);
     const { cart, addItemToCart, removeItemFromCart, clearCart, bundleAddToCart} = useCart();
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1290px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 521px)' });
+    const isTablet = useMediaQuery({ query: '(max-width: 1240px)' });
     const [clicked, setClicked] = useState('');
-    const [subTotalBundlePrice, setSubTotalBundlePrice] = useState(0)
-    const [subTotalDiscountBundlePrice, setSubTotalDiscountBundlePrice] = useState(0)
     let totalPrice=0
     let totalDiscountPrice=0
 
@@ -90,11 +89,11 @@ const FBT = function(){
                     <div className="plusicon">+</div>
                     <div className="fbt_item_wrap">
                         <div className="fbt_item_wrap_slider">
-                        <Swiper spaceBetween={isTabletOrMobile ? 0 : 10}
+                        <Swiper spaceBetween={isTablet ? 0 : 10}
                             modules={[Navigation]}
-                            slidesPerView={isTabletOrMobile ? 1.2 : 2}
-                            allowTouchMove={isTabletOrMobile ? true : false}
-                            scrollbar={isTabletOrMobile ?  true : false }
+                            slidesPerView={isTabletOrMobile ? 1.5 : 2}
+                            allowTouchMove={isTablet ? true : false}
+                            scrollbar={isTablet ?  true : false }
                             navigation={{ disabledClass: 'inc_disabled' }}>
                             {
                                 activeProducts.slice(1).map ((product, index) => {
@@ -139,7 +138,7 @@ const FBT = function(){
                         }
                     </div>
                     <div className={`fbt_summary_btn ${totalPrice !== null ? 'active' : 'inactive'}`}>
-                        <div className="sub-total-item">Total Items : </div>
+                        <div className="sub-total-item">{<span>{addedProductsToBundle.length} {addedProductsToBundle.length < 2 ? "Item Added" : "Items Added"}</span>}</div>
                         <div className="sub-total-price"> Total Price : 
                             {totalDiscountPrice !== null && <span className="price">₹{parseFloat(totalDiscountPrice).toFixed(2)}</span>}
                             {totalDiscountPrice !== null && totalPrice > totalDiscountPrice && <span className="strike_price line-through">₹{parseFloat(totalPrice).toFixed(2)}</span>}
