@@ -19,8 +19,8 @@ const FBT = function(){
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 521px)' });
     const isTablet = useMediaQuery({ query: '(max-width: 1240px)' });
     const [clicked, setClicked] = useState('');
-    let totalPrice=0
-    let totalDiscountPrice=0
+    let totalPrice=0;
+    let totalDiscountPrice=0;
 
     useEffect(() => {
         const getProducts = async () => {

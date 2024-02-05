@@ -8,7 +8,7 @@ export default function DropDown() {
     const [click, setClick] = useState(false)
     const handleClick = () => setClick(!click)
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 900px)' });
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+    const isMobile = useMediaQuery({ query: '(max-width: 960px)' });
 
     if(click){
         if(isMobile){

@@ -8,7 +8,7 @@ export default function NavBar2() {
     const [click, setClick] = useState(false)
     const [dropdown, setDropdown] = useState(false)
     const closeMobileMenu = () => setClick(false)
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 900px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 960px)' });
 
     const onMouseEnter = () => {
         if (window.innerWidth < 960) {
