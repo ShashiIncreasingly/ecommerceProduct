@@ -16,9 +16,9 @@ export default function DropDown() {
             document.querySelector('body').classList.add('modal-open')
         }
     }
-    if(click){
-        document.querySelector('.hideMenu').click()
-    }
+    // if(click){
+    //     document.querySelector('.hideMenu').click()
+    // }
     
     return (
         <>
