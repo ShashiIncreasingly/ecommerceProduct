@@ -73,6 +73,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
+  background: #2196f321;
 }
 .home_header, .cart_header{
   display: flex;
@@ -642,7 +643,7 @@ menu, ol, ul, li {
       border-bottom: 30px solid transparent;
     }
     .home_header{
-      width: 40%;
+      width: 72%;
     }
     .triangle-left span{
       font-size: 18px;
@@ -714,7 +715,8 @@ menu, ol, ul, li {
   }
   .dropdown-menu li {
     /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
-    background: #e6edf2;
+    /* background: #e6edf2; */
+    background: #e7f0ef;
     cursor: pointer;
   }
   
@@ -1117,12 +1119,17 @@ input::placeholder, textarea::placeholder {
     font-weight: bold;
   }
 }
+@media only screen and (min-width: 300px) and (max-width: 420px) {
+  .header_3 p {
+    font-size: 20px;
+  }
+}
 .modal-open .navbar{
   display: block;
   position: absolute;
   top: 0;
   left: 0;
-  background: #fff;
+  background: #e7f0ef;
   width: 300px;
   height: 100%;
   z-index: 99;
@@ -1139,7 +1146,7 @@ input::placeholder, textarea::placeholder {
   height: auto;
   display: flex;
   text-align: left;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #e7f0ef;
   border-radius: 2px;
   position: relative;
   flex-flow: column;
@@ -1149,12 +1156,12 @@ input::placeholder, textarea::placeholder {
 }
 .modal-open .nav-item:first-child {
   border: none;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #e7f0ef;
 }
 
 
 .modal-open .nav-item:last-child {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #e7f0ef;
 }
 
 @media only screen and (min-width: 1300px) {
@@ -1191,4 +1198,7 @@ body.modal-open .menu-overlay {
 .products-menu{
   color: #E10098;
   font-size: 28px;
+}
+body.modal-open {
+  position: fixed;
 }
