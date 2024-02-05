@@ -12,16 +12,19 @@ export default function DropDown() {
 
     if(click){
         if(isMobile){
-            document.querySelector('.hideMenu').click()
+            // document.querySelector('.hideMenu').click()
         }
     }
     const handleOnclickMenu = (checkflag) => {
         setClick(checkflag);
+        if (window.innerWidth > 962) {   
+            document.querySelector('.dropdown-menu').classList.add('clicked')
+        }
         if(isMobile){
             if(document.querySelector('body').classList.contains('modal-open')){
                 document.querySelector('body').classList.remove('modal-open')
             }else{
-                document.querySelector('body').classList.add('modal-open')
+                // document.querySelector('body').classList.add('modal-open')
             }
         }
     }
@@ -29,11 +32,13 @@ export default function DropDown() {
     
     return (
         <>
-        <ul onClick={handleClick} className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}>
+        <ul className={isMobile ? 'dropdown-menu' : 'dropdown-menu clicked'}>
+        {/* className={click ? 'dropdown-menu clicked' : 'dropdown-menu'} */}
             {MenuItems.map((item, index) => {
             return (
-                isTabletOrMobile ? 
-                <li key={index} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}><Link className={item.cName} to={item.path} >{item.title}</Link></li> : <li key={index} onClick={() => setClick(false)}><Link className={item.cName} to={item.path} >{item.title}</Link></li>
+                <li key={index} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}><Link className={item.cName} to={item.path} >{item.title}</Link></li>
+                // isTabletOrMobile ? 
+                // <li key={index} onClick={() => handleOnclickMenu(isTabletOrMobile ? false : true)}><Link className={item.cName} to={item.path} >{item.title}</Link></li> : <li key={index} onClick={() => setClick(false)}><Link className={item.cName} to={item.path} >{item.title}</Link></li>
             )
             })}
         </ul>
