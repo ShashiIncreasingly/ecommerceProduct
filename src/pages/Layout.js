@@ -18,7 +18,7 @@ const Layout = () => {
       <header className='px-10 py-2 border-b font-semibold flex w-full flex justify-between items-center header_wrap'>
           <div className='home_header'>
             <div onClick={openModal} className='menuBar'><div className="strip2"><div></div><div></div><div></div></div></div>
-            <Link to="/"> <div className='triangle-left'><span>Shashi</span> </div></Link>
+            <Link to="/"> <div className='triangle-left'><span></span> </div></Link>
             <NavBar2/>
           </div>
           {/* <Link to="/" className='home_nav'><div>Home</div></Link>

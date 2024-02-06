@@ -6,6 +6,9 @@
 #root {
   display: block;
 }
+body.open{
+  position: fixed;
+}
 .App {
   text-align: center;
   display: flex;
@@ -80,7 +83,6 @@
   justify-content: space-between;
   align-items: center;
   flex-flow: row;
-  width: 51%;
 }
 .filter_wrap{
   display: flex;
@@ -511,13 +513,13 @@ main {
 .header_6 {
   min-height: 30px;
 }
-.triangle-left {
+/* .triangle-left {
   width: 0;
   height: 0;
   border-top: 40px solid transparent;
   border-right: 90px solid #72bcf4;
   border-bottom: 40px solid transparent;
-}
+} */
 .triangle-left span {
   font-size: 23px;
   font-weight: bold;
@@ -525,7 +527,44 @@ main {
   left: 25px;
   font-family: cursive;
 }
-
+.triangle-left span{
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.5em;
+  padding-bottom: 45px;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+}
+.triangle-left span:before {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 60%;
+  left: 50%;
+  margin-left: -30%;
+  height: 1px;
+  content: "";
+  background-color: #777;
+  z-index: 4;
+  /* font-size: 28px; */
+}
+.triangle-left span:after{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-left: -20px;
+  bottom: auto;
+  content: '\00a7';
+  line-height: 40px;
+  color: #03A9F4;
+  font-weight: 400;
+  z-index: 5;
+  display: block;
+  font-size: 84px;
+  top: -2px;
+}
 
 a {
   color: inherit;
@@ -640,13 +679,13 @@ menu, ol, ul, li {
     .header_wrap{
       padding: 10px 0;
     }
-    .triangle-left{
+    /* .triangle-left{
       border-top: 30px solid transparent;
       border-right: 66px solid #72bcf4;
       border-bottom: 30px solid transparent;
-    }
+    } */
     .home_header{
-      width: 72%;
+      width: 62%;
     }
     .triangle-left span{
       font-size: 18px;
@@ -1350,6 +1389,9 @@ ul.fh5co-social-icons {
   .listing-wrap .product_list {
     max-width: 138px;
     min-width: 138px;
+  }
+  .home_header{
+    width: 48% !important;
   }
 }
 @media only screen and (min-width: 365px) and (max-width: 404px) { 

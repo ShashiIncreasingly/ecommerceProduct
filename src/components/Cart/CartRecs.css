@@ -4,7 +4,6 @@ body {
 body.open {
     position: fixed;
     top: 0;
-    display: contents;
 }
 .cart-recs {
     display: flex;
