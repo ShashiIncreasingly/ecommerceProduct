@@ -1322,3 +1322,25 @@ ul.fh5co-social-icons {
     font-size: 14px;
   }
 }
+@media only screen and (min-width: 339px) and (max-width: 499px) { 
+  .my-profile-wrapper h1 span:before {
+    top: -7px;
+    left: 46px;
+  }
+  .my-profile-wrapper h1 span:after{
+    top: auto;
+    bottom: 0;
+    right:-26px;
+  }
+}
+@media only screen and (min-width: 500px) and (max-width: 520px) { 
+  .my-profile-wrapper h1 span:before {
+    top: -7px;
+    left: 46px;
+  }
+  .my-profile-wrapper h1 span:after{
+    top: auto;
+    bottom: 44px;
+    right: -183px;
+  }
+}
