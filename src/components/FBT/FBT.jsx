@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { fetchProducts } from "../utils";
-import ProductCard from "./ProductCard";
-import './FBT.css';
-import imgSrc from "./images";
+import {fetchProducts} from '../../API/utils';
+import ProductCard from "../ProductCard/ProductCard";
+import '../FBT/FBT.css';
+import imgSrc from "../Assets/images";
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useCart } from "../cartContext";
+import { useCart } from "../../cartContext";
 import 'swiper/css';
 import { useMediaQuery } from 'react-responsive';
 

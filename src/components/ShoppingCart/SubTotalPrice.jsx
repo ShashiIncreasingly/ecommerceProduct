@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useCart } from '../cartContext';
+import { useCart } from '../../cartContext';
 
 const SubTotal = () => {
     const { cart, addItemToCart, removeItemFromCart, clearCart } = useCart();

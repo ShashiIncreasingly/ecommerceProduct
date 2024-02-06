@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useCart } from '../cartContext';
-import Price from '../atoms/Price';
-import SubTotal from './SubTotalPrice';
+import { useCart } from '../../cartContext';
+import Price from '../../atoms/Price';
+import SubTotal from '../ShoppingCart/SubTotalPrice';
 
 const ShoppingCart = () => {
    const { cart, addItemToCart, removeItemFromCart, clearCart } = useCart();

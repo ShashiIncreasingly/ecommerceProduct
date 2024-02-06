@@ -1,6 +1,6 @@
 import React from "react";
-import Price from "../atoms/Price";
-import imgSrc from "./images";
+import Price from "../../atoms/Price";
+import imgSrc from "../Assets/images";
 
 function ProductCard({product, index}) {
     return (

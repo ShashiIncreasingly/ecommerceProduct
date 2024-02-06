@@ -94,7 +94,7 @@ body {
 }
 
 .swiper-button-prev {
-    background-image: url("../images/img/arrow-left.png");
+    background-image: url("../../images/img/arrow-left.png");
     /* 이미지가 나오지않을 때, ./img/arrow-left.png로 */
     background-size: contain;
     background-position: 50% 60%;
@@ -105,7 +105,7 @@ body {
 }
 
 .swiper-button-next {
-    background-image: url("../images/img/arrow-right.png");
+    background-image: url("../../images/img/arrow-right.png");
     /* 이미지가 나오지않을 때, ./img/arrow-left.png로 */
     background-size: contain;
     background-position: 50% 60%;

@@ -1,14 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { fetchProducts } from "../utils";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import './CartRecs.css';
-import imgSrc from "./images";
+import imgSrc from "../Assets/images";
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useCart } from "../cartContext";
 import 'swiper/css';
 import { useMediaQuery } from 'react-responsive';
+import {fetchProducts} from '../../API/utils';
+import { useCart } from "../../cartContext";
 
 const CatRecs = function(){
     const [cartProducts, setCartProducts] = useState(null);

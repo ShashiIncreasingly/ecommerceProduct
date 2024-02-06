@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import styles from '../App.css';
+import styles from '../css/App.css';
 
 const Contact = () => {
     const [name, setName] = useState('')
@@ -49,8 +49,8 @@ const Contact = () => {
                 <div className='contactMain'>
                     <div className='contactLeft'>
                         <h2>Let's build your brand.</h2>
-                        <p>My goal is to work with you to create a cohesive brand image that accurately reflects your business's values, personality, and offerings.
-                        Whether you're looking to showcase your products, capture the essence of your services, or simply tell your brand's story through imagery, I'm 
+                        <p>My goal is to work with you to create a cohesive brand product that accurately reflects your business's values, personality, and offerings.
+                        Whether you're looking to showcase your products, capture the essence of your services, or simply tell your brand's story through a website, I'm 
                         here to help bring your vision to life.</p>
                     </div>
                     <form onSubmit={handleSubmit} className='contactRight'>

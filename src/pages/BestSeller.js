@@ -1,7 +1,7 @@
 
-import '../App.css';
+import '../css/App.css';
 import React from 'react';
-import ProductRecs from '../components/ProductRecs';
+import ProductRecs from '../components/ProductList/ProductRecs';
 
 
 function BestSeller() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import DropDown from "./DropDown";
+import DropDown from "../Nav/DropDown";
 import { useMediaQuery } from 'react-responsive';
 
 export default function NavBar2() {

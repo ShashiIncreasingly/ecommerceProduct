@@ -1,7 +1,7 @@
 
-import './App.css';
-import ProductRecs from './components/ProductRecs';
-import Navbar from './components/Navbar';
+import './css/App.css';
+import ProductRecs from './components/ProductList/ProductRecs';
+import Navbar from './components/Nav/Navbar';
 
 function App() {
   return (

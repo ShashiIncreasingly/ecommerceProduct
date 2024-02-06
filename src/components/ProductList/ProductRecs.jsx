@@ -1,12 +1,12 @@
 import React from "react";
-import '../App.css';
+import '../../css/App.css';
 import { useEffect, useState } from 'react';
-import Price from '../atoms/Price';
-import { useCart } from '../cartContext';
-import { fetchProducts } from '../utils';
-import Filter from '../components/Filter';
-import ProductCard from "./ProductCard";
-import imgSrc from "./images";
+import Price from '../../atoms/Price';
+import { useCart } from '../../cartContext';
+import { fetchProducts } from '../../API/utils';
+import Filter from '../Features/Filter';
+import ProductCard from "../ProductCard/ProductCard";
+import imgSrc from "../Assets/images";
 
 function ProductRecs() {
   const { cart, addItemToCart, removeItemFromCart, clearCart } = useCart();

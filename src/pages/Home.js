@@ -3,7 +3,7 @@ import bestSeller from '../images/bestSeller.png';
 import fbt from '../images/fbt.png';
 import reccomendations from '../images/reccomendations.png';
 import crossSell from '../images/crossSell.png';
-import '../App.css';
+import '../css/App.css';
 import { Outlet, Link } from "react-router-dom";
 
 function Home() {

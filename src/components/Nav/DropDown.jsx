@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import '../App.css';
-import { MenuItems } from "./MenuItems";
+import '../../css/App.css';
+import { MenuItems } from "../Nav/MenuItems";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 export default function DropDown() {

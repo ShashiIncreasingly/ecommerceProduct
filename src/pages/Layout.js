@@ -1,8 +1,8 @@
 
 import React from 'react';
-import ShoppingCart from '../components/ShoppingCart';
+import ShoppingCart from '../components/ShoppingCart/ShoppingCart';
 import { Outlet, Link } from "react-router-dom";
-import NavBar2 from '../components/NavBar';
+import NavBar2 from '../components/Nav/NavBar';
 
 
 

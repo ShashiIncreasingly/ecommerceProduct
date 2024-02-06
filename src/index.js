@@ -9,8 +9,8 @@ import Contact from "./pages/Contact";
 import BestSeller from "./pages/BestSeller";
 import { CartProvider } from './cartContext';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import FBT from './components/FBT';
-import CatRecs from './components/CatRecs';
+import FBT from './components/FBT/FBT';
+import CatRecs from './components/Cart/CatRecs';
 
 export default function App() {
   return (
