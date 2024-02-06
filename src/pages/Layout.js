@@ -9,7 +9,7 @@ import NavBar2 from '../components/Nav/NavBar';
 const Layout = () => {
   const openModal = (event) => {
     document.body.classList.add('modal-open');
-    document.querySelector('.nav-item .nav-links').click()
+    // document.querySelector('.nav-item .nav-links').click()
     // this.setState({ showModal: true });
   }
   
