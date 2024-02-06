@@ -1363,6 +1363,9 @@ ul.fh5co-social-icons {
   .prof-skil {
     font-size: 14px;
   }
+  .triangle-left span:after {
+    top: 0;
+  }
 }
 @media only screen and (min-width: 339px) and (max-width: 499px) { 
   .my-profile-wrapper h1 span:before {
