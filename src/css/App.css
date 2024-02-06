@@ -76,9 +76,10 @@ body.open{
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 10px 4px;
   background: #2196f321;
 }
+
 .home_header, .cart_header{
   display: flex;
   justify-content: space-between;
@@ -678,7 +679,7 @@ menu, ol, ul, li {
       display: none;
     } */
     .header_wrap{
-      padding: 10px 0;
+      padding: 18px 5px;
     }
     /* .triangle-left{
       border-top: 30px solid transparent;
@@ -1415,7 +1416,4 @@ ul.fh5co-social-icons {
     max-width: 190px;
     min-width: 190px;
   }
-}
-.header_wrap{
-  padding: 10px;
 }
