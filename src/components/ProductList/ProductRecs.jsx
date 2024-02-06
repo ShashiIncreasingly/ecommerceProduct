@@ -68,7 +68,7 @@ function ProductRecs() {
             </select>
             </div>
         </div>
-        <div className='product_block'>
+        <div className='product_block listing-wrap'>
         {activeProducts.map((products, index) => {
             products.imageURLN = imgSrc[index]
             return (

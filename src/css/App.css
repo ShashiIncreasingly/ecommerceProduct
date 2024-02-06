@@ -1346,3 +1346,27 @@ ul.fh5co-social-icons {
     right: -183px;
   }
 }
+@media only screen and (min-width: 300px) and (max-width: 365px) { 
+  .listing-wrap .product_list {
+    max-width: 138px;
+    min-width: 138px;
+  }
+}
+@media only screen and (min-width: 365px) and (max-width: 404px) { 
+  .listing-wrap .product_list {
+    max-width: 160px;
+    min-width: 160px;
+  }
+}
+@media only screen and (min-width: 404px) and (max-width: 460px) { 
+  .listing-wrap .product_list {
+    max-width: 180px;
+    min-width: 180px;
+  }
+}
+@media only screen and (min-width: 460px) and (max-width: 500px) { 
+  .listing-wrap .product_list {
+    max-width: 190px;
+    min-width: 190px;
+  }
+}
