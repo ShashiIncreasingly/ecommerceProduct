@@ -6,6 +6,7 @@
 #root {
   display: block;
 }
+
 body.open{
   position: fixed;
 }
@@ -1411,4 +1412,7 @@ ul.fh5co-social-icons {
     max-width: 190px;
     min-width: 190px;
   }
+}
+.header_wrap{
+  padding: 10px;
 }
