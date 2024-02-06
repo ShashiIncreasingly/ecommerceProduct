@@ -484,7 +484,7 @@ main {
   flex-flow: column;
 }
 
-.header_1, .header_2, .header_3, .header_4, .header_5{
+.header_1, .header_2, .header_3, .header_4, .header_5, .header_6{
   display: flex;
   flex-flow: column;
   background-color: #86c7ff;
@@ -508,7 +508,9 @@ main {
   display: flex;
   justify-content: center;
 }
-
+.header_6 {
+  min-height: 30px;
+}
 .triangle-left {
   width: 0;
   height: 0;
