@@ -41,7 +41,7 @@ export default function NavBar2() {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'><Link to="/" className='nav-links'>Home</Link></li>
             <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} ><Link to='#' className='nav-links products-menu' onClick={getProductsDetails } >Products </Link><DropDown /></li>
-            <li className='nav-item'><Link to='/blogs' className='nav-links' onClick={hideModal }>Download Resume</Link></li>
+            <li className='nav-item'><Link to='/blogs' className='nav-links' onClick={hideModal }>About</Link></li>
             <li className='nav-item'><Link to='/contact' className='nav-links contact_nav' onClick={hideModal }>Contact</Link></li>
             </ul>
             <div onClick={hideModal}  className="hideMenu"></div>
